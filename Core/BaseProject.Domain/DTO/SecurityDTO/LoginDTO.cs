@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaseProject.Domain.DTO.SecurityDTO
 {
+    //test note
     public class LoginDTO
     {
         public Guid ID { get; set; }
