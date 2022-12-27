@@ -38,7 +38,6 @@
 
                 <form asp-controller="Security" asp-action="Login" method="post">
                     @Html.ValidationMessage("All", new { @class = "alert-danger" })
-  
                     <div class="input-group mb-3">
                         <input asp-for="UserName" class="form-control" placeholder="Kullanıcı Adı" required>
                         <span asp-validation-for="UserName" class="text-danger"></span>
