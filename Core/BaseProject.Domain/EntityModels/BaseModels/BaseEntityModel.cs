@@ -14,8 +14,8 @@ namespace BaseProject.Domain.EntityModels.BaseModels
         {
             CreatedDate = DateTime.Now;
             LastModifiedDate = DateTime.Now;
-            CreatedBy = -1;
-            LastModifiedBy = -1;
+            CreatedBy = Guid.Empty;
+            LastModifiedBy = Guid.Empty;
             ObjectStatus = ObjectStatus.NonDeleted;
             Status = Status.Active;
         }
@@ -24,11 +24,11 @@ namespace BaseProject.Domain.EntityModels.BaseModels
 
         public DateTime CreatedDate { get; set; }
 
-        public int CreatedBy { get; set; }
+        public Guid? CreatedBy { get; set; }
 
         public DateTime LastModifiedDate { get; set; }
 
-        public int LastModifiedBy { get; set; }
+        public Guid? LastModifiedBy { get; set; }
 
         public ObjectStatus ObjectStatus { get; set; }
 

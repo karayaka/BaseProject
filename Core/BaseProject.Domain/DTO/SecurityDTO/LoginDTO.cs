@@ -11,7 +11,7 @@ namespace BaseProject.Domain.DTO.SecurityDTO
     {
         public Guid ID { get; set; }
 
-        public string UserModel { get; set; }
+        public string UserName { get; set; }
 
         public string Password { get; set; }
     }

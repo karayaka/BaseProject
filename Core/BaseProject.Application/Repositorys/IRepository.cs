@@ -44,18 +44,18 @@ namespace BaseProject.Application.Repositorys
         Task<IEnumerable<T>> UpdateRange<T>(IEnumerable<T> models) where T : BaseEntityModel;
 
         /// <summary>
-        /// Generik Olarak Silme Metodu
+        /// Generik Olarak Silme Metoƒdu
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="ID"></param>
-        Task<int> Delete<T>(int ID) where T : BaseEntityModel;
+        Task<T> Delete<T>(Guid ID) where T : BaseEntityModel;
 
         /// <summary>
         /// Generik Olarak Silme Metodu
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="ID"></param>
-        Task<int> Delete<T>(T model) where T : BaseEntityModel;
+        Task<T> Delete<T>(T model) where T : BaseEntityModel;
 
         /// <summary>
         /// Liste Halinde Silme
@@ -70,7 +70,7 @@ namespace BaseProject.Application.Repositorys
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="ID"></param>
-        Task<int> Remove<T>(int ID) where T : BaseEntityModel;
+        Task<Guid> Remove<T>(Guid ID) where T : BaseEntityModel;
 
         /// <summary>
         /// Liste Silme
@@ -140,7 +140,7 @@ namespace BaseProject.Application.Repositorys
         /// <typeparam name="T"></typeparam>
         /// <param name="ID"></param>
         /// <returns></returns>
-        Task<T> GetByID<T>(int ID) where T : BaseEntityModel;
+        Task<T> GetByID<T>(Guid ID) where T : BaseEntityModel;
         
         /// <summary>
         /// Sayfalama işleminde önce sayfa sayısı
@@ -219,14 +219,14 @@ namespace BaseProject.Application.Repositorys
         /// <typeparam name="T"></typeparam>
         /// <param name="expression"></param>
         /// <returns></returns>
-        Task<int> CountNonDeleted<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
+        int CountNonDeleted<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
         /// <summary>
         /// Silinmemiş ve aktif kayıtları getir
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="expression"></param>
         /// <returns></returns>
-        Task<int> CountNonDeletedAndActive<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
+        int CountNonDeletedAndActive<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
         /// <summary>
         /// Generick Any COde
         /// </summary>
@@ -240,14 +240,14 @@ namespace BaseProject.Application.Repositorys
         /// <typeparam name="T"></typeparam>
         /// <param name="expression"></param>
         /// <returns></returns>
-        Task<bool> AnyNonDeleted<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
+        bool AnyNonDeleted<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
         /// <summary>
         /// Sİlinmemiş ve Aktif Ant Code
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="expression"></param>
         /// <returns></returns>
-        Task<bool> AnyNonDeletedAndActive<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
+        bool AnyNonDeletedAndActive<T>(Expression<Func<T, bool>> expression) where T : BaseEntityModel;
         /// <summary>
         /// Aplication Ket Control
         /// </summary>

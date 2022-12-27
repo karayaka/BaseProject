@@ -1,7 +1,14 @@
+using BaseProject.Infrastructure;
+using BaseProject.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var cnnc = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddNoteDbContext(cnnc);
+builder.Services.AddRepositorys();
 
 var app = builder.Build();
 
