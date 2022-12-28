@@ -5,10 +5,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+//data context add
 var cnnc = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddNoteDbContext(cnnc);
+//repositorys add
 builder.Services.AddRepositorys();
+//services mappr add container
+builder.Services.AddMapper();
+//addServices
+builder.Services.AddServices();
+
+builder.Services.AddSession(opt =>
+{
+    opt.IdleTimeout= TimeSpan.FromMinutes(90);
+});
 
 var app = builder.Build();
 

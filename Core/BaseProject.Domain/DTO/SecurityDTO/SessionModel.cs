@@ -8,6 +8,7 @@ namespace BaseProject.Domain.DTO.SecurityDTO
 {
     public class SessionModel
     {
+        //Mapper burda kotrol edileceks
         public Guid ID { get; set; }
         public string ProfileImage { get; set; }
         public string Name { get; set; }

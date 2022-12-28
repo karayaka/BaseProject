@@ -1,6 +1,8 @@
 ﻿using System;
 using BaseProject.Application.Repositorys;
+using BaseProject.Application.Services.SecurityServices;
 using BaseProject.Infrastructure.Repositorys;
+using BaseProject.Infrastructure.Services.SecurityServices;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BaseProject.Infrastructure
@@ -13,7 +15,11 @@ namespace BaseProject.Infrastructure
         }
         public static void AddServices(this IServiceCollection services)
         {
-            //services.AddTransient<IMailServices, MailServices>();//register eski usul yazılacak ve devam edecek
+            services.AddTransient<ISessionServices, SessionServices>();
+        }
+        public static void AddMapper(this IServiceCollection services)
+        {
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
     }
 }

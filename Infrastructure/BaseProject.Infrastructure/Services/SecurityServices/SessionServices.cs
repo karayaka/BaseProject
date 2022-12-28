@@ -46,10 +46,10 @@ namespace BaseProject.Infrastructure.Services.SecurityServices
             {
                 return GetSession<SessionModel>("login");
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                throw e;
             }
         }
 
